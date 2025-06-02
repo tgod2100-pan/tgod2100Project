@@ -1,0 +1,42 @@
+# docker-compose up
+# docker-compose up --build
+#version: '3' 舊的project才要用到 新的都可以不用寫
+services:
+  db:
+    image: mysql:8
+    restart: always
+    container_name: gtalent-jdbc-mysql-db
+    environment:
+      MYSQL_DATABASE: gtalent1
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+    volumes:
+      - db-data:/var/lib/mysql
+#    healthcheck:
+#      test: ["CMD", "mysqladmin", "ping", "--host=localhost", "--user=root", "--password=rootpassword"]
+#      interval: 30s # 每30秒檢查一次
+#      timeout: 10s  # 每次檢查最大等待時間
+#      retries: 3    # 連續檢查3次失敗，我就認定unhealthy
+
+  app:
+    build: .
+    container_name: gtalent-springboot-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/gtalent1
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: rootpassword
+    networks:
+      - app-network
+
+volumes:
+  db-data:
+
+networks:
+  app-network:
