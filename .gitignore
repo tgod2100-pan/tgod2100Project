@@ -1,0 +1,13 @@
+# IntelliJ/VSCode 相關設定
+.idea/
+*.iml
+.vscode/
+
+# 編譯產生的 class 檔
+*.class
+/out/
+/target/
+
+# 測試暫存資料
+*.log
+*.tmp
