@@ -1,0 +1,64 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# IntelliJ IDEA
+.idea/                  # IntelliJ 的設定資料夾
+*.iml                   # IntelliJ 模組檔案
+*.iws                   # 舊版設定檔
+out/                    # 預設的編譯輸出資料夾
+*.ipr                   # 舊版 project file
+
+# Build system outputs
+/build/                 # Gradle
+/target/                # Maven
+/.gradle/               # Gradle 快取
+
+# Java Class files
+*.class
+
+# Log files
+*.log
+
+# OS 相關
+.DS_Store               # macOS
+Thumbs.db               # Windows
+
+# Environment files
+.env
+*.env
+
+# Local config override
+*.local
+
+target/
