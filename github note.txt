@@ -1,0 +1,98 @@
+# GitHub 發佈與更新 Spring Boot 專案筆記
+
+## ✅ 第一次發佈到 GitHub
+
+### 1. 事前準備
+
+* ✅ 有 GitHub 帳號
+* ✅ 專案已完成並在本地
+* ✅ 已安裝 Git（用 `git --version` 確認）
+
+### 2. 初始化 Git 專案（如果還沒 init）
+
+```bash
+cd 專案/資料夾/路徑
+git init
+```
+
+### 3. 建立 `.gitignore`
+
+建立 `.gitignore` 檔案，常見內容如下（IntelliJ + Maven 專案）：
+
+```
+# Maven
+/target
+
+# IntelliJ
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Application properties
+application.properties
+application.yml
+```
+
+### 4. 建立本地 Commit
+
+```bash
+git add .
+git commit -m "Initial commit - upload Spring Boot project"
+```
+
+### 5. 建立 GitHub repository
+
+1. 登入 GitHub
+2. 點右上角「+」→「New repository」
+3. 命名 repository（例：`anime-list-springboot`）
+4. **不要**勾選 Initialize README
+5. 建立完成後，會看到遠端指令（如下步驟）
+
+### 6. 綁定遠端並推送
+
+```bash
+git remote add origin https://github.com/你的帳號/anime-list-springboot.git
+git branch -M main
+git push -u origin main
+```
+
+🔐 若要求帳密，請使用 [Personal Access Token (PAT)](https://github.com/settings/tokens) 取代密碼。
+
+---
+
+## 🔁 第二次、第三次、之後的更新步驟
+
+每次更新專案後，重複以下步驟即可：
+
+```bash
+git add .
+git commit -m "描述這次更動的訊息"
+git push
+```
+
+### 📌 commit 訊息建議
+
+* "Add AnimeList updateByTwName API"
+* "Fix bug in AnimeListService"
+* "Refactor controller structure"
+* "Update README and .gitignore"
+
+---
+
+## 🧩 補充：IntelliJ 也可以直接操作 GitHub
+
+1. VCS → Git → Commit → Push
+2. 或點右下角 Git 分支 → 選 Push/Commit
+
+如果你比較偏好圖形化操作，可以這樣操作，比較直觀。
+
+---
+
+以上為完整筆記，若之後要整合 GitHub Actions、自動部署等可以再補充。
+有需要 `.gitignore` 樣板或 IntelliJ 圖文教學也可以跟我說！
