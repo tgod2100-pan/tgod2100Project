@@ -68,17 +68,17 @@ public class AnimeListController {
     }
 
     @PutMapping("/update-by-en-name/{enName}")
-    public AnimeList updateByEnName(String enName, AnimeList animeList) {
+    public AnimeList updateByEnName(@PathVariable String enName, @RequestBody AnimeList animeList) {
         return animeListService.updateByEnName(enName, animeList);
     }
 
     @PutMapping("/update-by-tw-name/{twName}")
-    public AnimeList updateByTwName(String twName, AnimeList animeList) {
+    public AnimeList updateByTwName(@PathVariable String twName, @RequestBody AnimeList animeList) {
         return animeListService.updateByTwName(twName, animeList);
     }
 
     @PutMapping("/update-by-jp-name/{enName}")
-    public AnimeList updateByJpName(String jpName, AnimeList animeList) {
+    public AnimeList updateByJpName(@PathVariable String jpName, @RequestBody AnimeList animeList) {
         return animeListService.updateByJpName(jpName, animeList);
     }
 
